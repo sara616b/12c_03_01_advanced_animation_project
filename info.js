@@ -65,6 +65,18 @@ function start() {
       start: "center 70%",
     },
   });
+  gsap.from("#try_it .fromLeft", {
+    xPercent: -10,
+    yPercent: 100,
+    opacity: 0,
+    duration: 0.5,
+    ease: "ease-in",
+    scrollTrigger: {
+      trigger: "#try_it .fromLeft",
+      toggleActions: "restart none none reset",
+      start: "center 70%",
+    },
+  });
   gsap.from("#details .fromRight", {
     opacity: 0,
     yPercent: 100,
