@@ -38,6 +38,21 @@ function toggleOption(event) {
   
   if (features[feature] === true) {
 
+    // Tried to make it so that user can only chouse one
+/*     if (features.long === true) {
+        features.half = false;
+    
+    } else if (features.half === true) {
+        features.long = false;
+    
+    } else if (features.text_1 === true) {
+        features.text_2 = false;
+
+    } else if (features.text_2 === true) {
+        features.text_1 = false;
+
+    } */
+
     //Select target and add chosen class
     target.classList.add("chosen"); 
 
@@ -65,7 +80,7 @@ function toggleOption(event) {
     
     console.log(`Feature ${feature} is turned on!`);
 
-    } else {
+    } else if (features[feature] === false) {
     target.classList.remove("chosen"); 
 
     const featuredElement = document.querySelector(`#selected [data-feature="${feature}"]`);
@@ -90,6 +105,7 @@ function toggleOption(event) {
 
     //Chose the feature element and hide it
     document.querySelector(`[data-feature=${feature}`).classList.add("hide");
+
     console.log(`Feature ${feature} is turned off!`);
     }); 
   }
