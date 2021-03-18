@@ -12,11 +12,12 @@
         margin: 0;
         box-sizing: border-box;
         padding: 0;
-        --dark-gray: #494b4d;
-        --blue: #3d85be;
-        --light-gray: #dddddd;
-        --medium-gray: #6e7173;
+        --dark-gray: #8c8c8c;
+        --blue: #96d2e1;
+        --light-gray: #c9c9c9;
         --white: white;
+        --black: black;
+        --shadowColor: rgba(0, 0, 0, 0.137);
       }
       html {
         overflow-x: hidden;
@@ -26,11 +27,10 @@
       main {
         width: 100vw;
         max-width: 1000px;
-        background-color: rgb(248, 248, 248);
+        background-color: var(--light-gray);
         display: flex;
         flex-direction: column;
         height: calc(100vh-50px);
-        background-color: rgb(248, 248, 248);
       }
 
       section {
@@ -43,7 +43,7 @@
         scroll-snap-align: start;
       }
       section:nth-of-type(odd) {
-        background-color: rgb(102, 132, 187);
+        background-color: var(--white);
       }
 
       #the_shirt {
@@ -69,7 +69,7 @@
         padding: 20px;
         padding-left: 10vw;
         z-index: 2;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.137);
+        /* text-shadow: 2px 2px 5px var(--shadowColor); */
       }
       section p + p {
         grid-column: 2/4;
@@ -84,12 +84,14 @@
         scroll-snap-align: start;
         display: block;
         background-color: var(--blue);
-        color: white;
+        color: var(--black);
+        text-shadow: var(--shadowColor) 1px 1px 2px;
         border: none;
         padding: 20px;
         font-size: 1rem;
         margin: 40px auto;
         text-decoration: none;
+        box-shadow: 2px 2px 5px var(--shadowColor);
       }
       button:hover {
         opacity: 0.7;
@@ -111,7 +113,6 @@
         margin: 10px;
         border: 2px solid rgb(236, 236, 236);
       }
-
       .gray {
         background-color: rgb(146, 146, 146);
       }

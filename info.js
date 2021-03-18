@@ -78,6 +78,7 @@ function start() {
   });
 
   //   color dots animation
+
   gsap.from("#color_dots", {
     duration: 2,
     iterations: 1,
