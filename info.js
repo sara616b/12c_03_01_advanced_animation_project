@@ -27,7 +27,6 @@ function start() {
       trigger: "#details .fromLeft",
       toggleActions: "restart none none reset",
       start: "center 70%",
-      markers: true,
     },
   });
   gsap.from("#colors .fromLeft", {
@@ -40,7 +39,6 @@ function start() {
       trigger: "#colors .fromLeft",
       toggleActions: "restart none none reset",
       start: "center 70%",
-      markers: true,
     },
   });
   gsap.from("#extras .fromLeft", {
@@ -53,7 +51,6 @@ function start() {
       trigger: "#extras .fromLeft",
       toggleActions: "restart none none reset",
       start: "center 70%",
-      markers: true,
     },
   });
   gsap.from("#edit_text .fromLeft", {
@@ -66,7 +63,6 @@ function start() {
       trigger: "#edit_text .fromLeft",
       toggleActions: "restart none none reset",
       start: "center 70%",
-      markers: true,
     },
   });
   gsap.from("#details .fromRight", {
@@ -78,55 +74,54 @@ function start() {
       trigger: "#details .fromRight",
       toggleActions: "restart none none reset",
       start: "center 90%",
-      markers: true,
     },
   });
 
   //   color dots animation
-
-  const properties = {
-    duration: 1500,
+  gsap.from("#color_dots", {
+    duration: 2,
     iterations: 1,
-    easing: "cubic-bezier(.25,.12,.61,1.51)",
-  };
-
-  const keyframes = [
-    {
-      transform: "rotate(-90deg)",
-      opacity: 0,
-      offset: 0,
+    ease: "cubic-bezier(.25,.12,.61,1.51)",
+    keyframes: [
+      {
+        transform: "rotate(-90deg)",
+        opacity: 0,
+        offset: 0,
+      },
+      {
+        transform: "rotate(0)",
+        opacity: 1,
+        offset: 0.8,
+      },
+      {
+        transform: "rotate(2deg)",
+        opacity: 1,
+        offset: 0.95,
+      },
+      {
+        transform: "rotate(0)",
+        opacity: 1,
+        offset: 1,
+      },
+    ],
+    scrollTrigger: {
+      trigger: "#color_dots",
+      toggleActions: "restart none none reset",
+      start: "center 70%",
     },
-    {
-      transform: "rotate(0)",
-      opacity: 1,
-      offset: 0.8,
-    },
-    {
-      transform: "rotate(2deg)",
-      opacity: 1,
-      offset: 0.9,
-    },
-    {
-      transform: "rotate(0)",
-      opacity: 1,
-      offset: 1,
-    },
-  ];
-
-  document.querySelector("#color_dots").animate(keyframes, properties);
+  });
 }
 
 // the tshirt animation
 
 // gsap.to("#the_shirt", {
-//   y: "0px",
-//   easing: "ease-in-out",
+//   y: "200vh",
 //   scrollTrigger: {
 //     trigger: "#the_shirt",
 //     scrub: true,
 //     markers: true,
-//     start: "top 75%",
-//     end: "bottom 25%",
 //     pin: true,
+//     start: "top 0%",
+//     end: "bottom 200vh",
 //   },
 // });
