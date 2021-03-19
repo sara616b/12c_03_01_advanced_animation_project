@@ -20,11 +20,13 @@
         --black: black;
         --shadowColor: rgba(0, 0, 0, 0.137);
       }
+
       html {
         overflow-x: hidden;
         overflow-y: scroll;
         scroll-snap-type: y mandatory;
       }
+
       main {
         width: 100vw;
         margin: auto;
@@ -42,6 +44,7 @@
         align-content: space-between;
         scroll-snap-align: start;
       }
+
       section:nth-of-type(even) {
         background-color: var(--white);
       }
@@ -105,18 +108,21 @@
         z-index: 2;
         /* text-shadow: 2px 2px 5px var(--shadowColor); */
       }
+
       section p + p {
         grid-column: 2/4;
         grid-row: 3/4;
         padding-right: 10vw;
         text-align: end;
       }
+
       main a {
         text-decoration: none;
         grid-column: 1/4;
         grid-row: 4/6;
         padding: 40px;
       }
+
       main button {
         width: 100%;
         height: 100%;
@@ -129,10 +135,12 @@
         box-shadow: 2px 2px 5px var(--shadowColor);
         font-size: clamp(1rem, 5vw, 2rem);
       }
+
       button:hover {
         opacity: 0.7;
         cursor: pointer;
       }
+
       #color_dots {
         grid-row: 2/6;
         grid-column: 3/4;
@@ -142,6 +150,7 @@
         transform: rotate(-90deg);
         opacity: 0;
       }
+
       .color_dot {
         border-radius: 50%;
         height: clamp(100px, 10%, 50px);
@@ -149,6 +158,7 @@
         margin: 10px;
         border: 2px solid rgb(236, 236, 236);
       }
+
       .gray {
         background-color: rgb(146, 146, 146);
       }
@@ -161,17 +171,42 @@
       .yellow {
         background-color: rgb(236, 204, 116);
       }
+
       #text_example {
         grid-column: 2/3;
         grid-row: 3/5;
         text-align: left;
         font-size: 1.5rem;
       }
+
+      #extra_one {
+        width: 25%;
+        grid-column: 3/3;
+        grid-row: 2/4;
+        margin-top: 3rem;
+        margin-left: 3rem;
+      }
+
+      #extra_two {
+        width: 25%;
+        grid-column: 3/3;
+        grid-row: 3/4;
+        margin-left: 3rem;
+      }
+
+      #extra_three {
+        width: 25%;
+        grid-column: 3/3;
+        grid-row: 4/4;
+        margin-left: 3rem;
+      }
+
       #try_it {
         z-index: 3;
         background-color: white;
         height: calc(100vh - 8vh);
       }
+
       #try_it p {
         grid-column: 1/4;
         grid-row: 1/4;
@@ -180,9 +215,12 @@
       }
     </style>
   </head>
+
   <body>
     <header>
+
       <nav>
+
         <div class="logo">
           <h4>Shirt.It</h4>
         </div>
@@ -206,8 +244,11 @@
           <div class="line2"></div>
           <div class="line3"></div>
         </div>
+
       </nav>
+
     </header>
+
     <main>
       <div id="overlay"></div>
       <div id="the_shirt"></div>
@@ -215,10 +256,12 @@
       <section id="intro">
         <p class="fromLeft">A T-Shirt for every occation</p>
       </section>
+
       <section id="details">
         <p class="fromLeft">100% Cotton</p>
         <p class="fromRight">Organic fabric<br />Ethically sourced</p>
       </section>
+
       <section id="colors">
         <div id="color_dots">
           <div class="color_dot gray"></div>
@@ -228,14 +271,14 @@
         </div>
         <p class="fromLeft">Any color you can imagine</p>
       </section>
+
       <section id="extras">
-        <img src="" alt="" id="extra_one" /><img
-          src=""
-          alt=""
-          id="extra_two"
-        /><img src="" alt="" id="extra_three" />
+        <img src="/images/feature_hoodie.png" alt="" id="extra_one" />
+        <img src="/images/feature_half.png" alt="" id="extra_two" />
+        <img src="/images/feature_long.png" alt="" id="extra_three" />
         <p class="fromLeft">Add all the extras you desire</p>
       </section>
+
       <section id="edit_text">
         <p class="fromLeft">Edit your own text</p>
         <p id="text_example" class="typewritten">
