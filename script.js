@@ -6,7 +6,8 @@ const features = {
   text_1: false,
   text_2: false,
   long: false,
-  half: false
+  half: false,
+  onlyOne: false,
 };
 
 let paint;
@@ -35,6 +36,34 @@ function toggleOption(event) {
   // Toggle feature in "model"
   features[feature] = !features[feature]; 
 
+
+  // Tried to make it so that user can only chouse one
+/*   document.querySelector(`[data-feature="long"]`).addEventListener("click", longORhalf);
+  document.querySelector(`[data-feature="half"]`).addEventListener("click", longORhalf);
+
+  document.querySelector(`[data-feature="text_1"]`).addEventListener("click", textOneORtextTwo);
+  document.querySelector(`[data-feature="text_2"]`).addEventListener("click", textOneORtextTwo);
+
+
+  function longORhalf() {
+    if (features.long === true) {
+        features.half = false;
+    
+    } else if (features.half === true) {
+        features.long = false;
+    
+    }
+  }
+
+  function textOneORtextTwo() {
+    if (features.text_1 === true) {
+        features.text_2 = false;
+
+    } else if (features.text_2 === true) {
+        features.text_1 = false;
+
+    }
+  } */
   
   if (features[feature] === true) {
 
