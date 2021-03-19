@@ -6,6 +6,7 @@ function start() {
 
   gsap.registerPlugin(ScrollTrigger);
 
+  //animations for text in all sections
   gsap.from("#intro .fromLeft", {
     xPercent: -10,
     yPercent: 100,
@@ -13,7 +14,7 @@ function start() {
     duration: 0.5,
     ease: "ease-in",
     scrollTrigger: {
-      trigger: "#intro .fromLeft",
+      trigger: "#intro",
       toggleActions: "restart none none reset",
     },
   });
@@ -24,7 +25,7 @@ function start() {
     duration: 0.5,
     ease: "ease-in",
     scrollTrigger: {
-      trigger: "#details .fromLeft",
+      trigger: "#details",
       toggleActions: "restart none none reset",
       start: "center 70%",
     },
@@ -36,7 +37,7 @@ function start() {
     duration: 0.5,
     ease: "ease-in",
     scrollTrigger: {
-      trigger: "#colors .fromLeft",
+      trigger: "#colors",
       toggleActions: "restart none none reset",
       start: "center 70%",
     },
@@ -48,7 +49,7 @@ function start() {
     duration: 0.5,
     ease: "ease-in",
     scrollTrigger: {
-      trigger: "#extras .fromLeft",
+      trigger: "#extras ",
       toggleActions: "restart none none reset",
       start: "center 70%",
     },
@@ -60,19 +61,30 @@ function start() {
     duration: 0.5,
     ease: "ease-in",
     scrollTrigger: {
-      trigger: "#edit_text .fromLeft",
+      trigger: "#edit_text ",
       toggleActions: "restart none none reset",
       start: "center 70%",
     },
   });
   gsap.from("#try_it .fromLeft", {
-    xPercent: -10,
-    yPercent: 100,
-    opacity: 0,
-    duration: 0.5,
+    duration: 1,
+    keyframes: [
+      {
+        opacity: 0,
+        xPercent: -10,
+        yPercent: 100,
+        offset: 0,
+      },
+      {
+        opacity: 1,
+        xPercent: 0,
+        yPercent: 0,
+        offset: 1,
+      },
+    ],
     ease: "ease-in",
     scrollTrigger: {
-      trigger: "#try_it .fromLeft",
+      trigger: "#try_it ",
       toggleActions: "restart none none reset",
       start: "center 70%",
     },
@@ -83,14 +95,13 @@ function start() {
     duration: 0.5,
     ease: "ease-in",
     scrollTrigger: {
-      trigger: "#details .fromRight",
+      trigger: "#details ",
       toggleActions: "restart none none reset",
       start: "center 90%",
     },
   });
 
   //   color dots animation
-
   gsap.from("#color_dots", {
     duration: 2,
     iterations: 1,
@@ -124,17 +135,3 @@ function start() {
     },
   });
 }
-
-// the tshirt animation
-
-// gsap.to("#the_shirt", {
-//   y: "200vh",
-//   scrollTrigger: {
-//     trigger: "#the_shirt",
-//     scrub: true,
-//     markers: true,
-//     pin: true,
-//     start: "top 0%",
-//     end: "bottom 200vh",
-//   },
-// });
