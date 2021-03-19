@@ -74,21 +74,6 @@ function toggleOption(event) {
 }
 
 function turnFeatureOn(target, feature) {
-  // Tried to make it so that user can only chouse one
-  /*     if (features.long === true) {
-        features.half = false;
-    
-    } else if (features.half === true) {
-        features.long = false;
-    
-    } else if (features.text_1 === true) {
-        features.text_2 = false;
-
-    } else if (features.text_2 === true) {
-        features.text_1 = false;
-
-    } */
-
   //Select target and add chosen class
   target.classList.add("chosen");
 
@@ -182,9 +167,9 @@ function getSvgInfo() {
 
 function interActivity() {
   document.querySelectorAll(".interact").forEach((eachG) => {
-    eachG.addEventListener("click", theClick);
     eachG.addEventListener("mouseover", theMouseover);
     eachG.addEventListener("mouseout", theMouseout);
+    eachG.addEventListener("click", theClick);
   });
 
   document.querySelectorAll(".color_btn").forEach((each_BTN) => {
@@ -194,20 +179,27 @@ function interActivity() {
 
 function theClick() {
   paint = this;
-
-  this.style.fill = "grey";
+  document.querySelectorAll("g").forEach((element) => {
+    element.style.stroke = "";
+  });
+  console.log(paint);
+  paint.style.stroke = "blue";
+  paint.style.strokeWidth = "10";
+  paint.style.fill = "grey";
 }
 
 function theMouseover() {
-  this.style.stroke = "blue";
+  // this.style.strokeWidth = "2";
+  // this.style.stroke = "blue";
 }
 
 function theMouseout() {
-  this.style.stroke = "none";
+  //this.style.stroke = "none";
 }
 
 function colorClick() {
   if (paint != undefined) {
     paint.style.fill = this.getAttribute("fill");
+    paint.style.stroke = "none";
   }
 }

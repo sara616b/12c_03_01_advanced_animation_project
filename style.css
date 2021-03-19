@@ -174,10 +174,11 @@ input[type="color"] {
   fill-rule: evenodd;
 }
 
-path {
-  stroke-width: 2;
-}
-
 #shadow {
   pointer-events: none;
+}
+
+.interact:hover {
+  stroke-width: 2;
+  stroke: blue;
 }
