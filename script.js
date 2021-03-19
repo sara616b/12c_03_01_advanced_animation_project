@@ -22,6 +22,11 @@ function start() {
     .querySelectorAll(".option")
     .forEach((option) => option.addEventListener("click", toggleOption));
 
+  // register color input changes
+  document
+    .querySelector("input[type='color']")
+    .addEventListener("input", clickColorInput);
+
   getSvgInfo();
 }
 
@@ -142,6 +147,13 @@ function turnFeatureOff(target, feature) {
 
     console.log(`Feature ${feature} is turned off!`);
   });
+}
+
+function clickColorInput() {
+  if (paint !== undefined) {
+    paint.style.fill = this.value;
+    paint.style.stroke = "";
+  }
 }
 // Create featureElement to be appended to #selected ul - could have used a <template> instead
 function createFeatureElement(feature) {

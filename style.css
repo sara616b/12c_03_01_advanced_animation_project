@@ -114,13 +114,21 @@ p {
 
 /* Colors */
 
-#colors {
+#colorsection {
   left: -45.5vw;
   position: relative;
   top: -5vw;
   padding: 10px;
   background-color: #ffffff;
   color: oldlace;
+  display: flex;
+  flex-direction: row;
+}
+input[type="color"] {
+  border: none;
+  width: 9%;
+  margin-left: 5px;
+  height: 90%;
 }
 
 /* Animation classes */
