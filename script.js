@@ -8,6 +8,7 @@ const features = {
   long: false,
   half: false,
   onlyOne: false,
+  custom_text: false,
 };
 
 let paint;
@@ -27,9 +28,50 @@ function start() {
     .querySelector("input[type='color']")
     .addEventListener("input", clickColorInput);
 
+  // register click on add_text_button
+  document.querySelector("#add_text_button").addEventListener("click", () => {
+    if (features.custom_text == true) {
+      removeCustomText();
+    } else {
+      if (features.text_2 == true) {
+        features.text_2 = false;
+        const targetForShort = document.querySelector(
+          ".option[data-feature='text_2']"
+        );
+        turnFeatureOff(targetForShort, "text_2");
+      }
+
+      if (features.text_1 == true) {
+        features.text_1 = false;
+        const targetForShort = document.querySelector(
+          ".option[data-feature='text_1']"
+        );
+        turnFeatureOff(targetForShort, "text_1");
+      }
+      addCustomText();
+    }
+  });
+
   getSvgInfo();
 }
 
+function addCustomText() {
+  features.custom_text = true;
+  let textField = document.querySelector("input[type='text'");
+  let textStringToAdd = textField.value;
+  console.log(textStringToAdd);
+  let textOnShirt = document.querySelector("#customText");
+  textOnShirt.textContent = textStringToAdd;
+  textOnShirt.classList.remove("hide");
+  document.querySelector("#add_text_button").innerHTML = "Remove Text";
+}
+
+function removeCustomText() {
+  features.custom_text = false;
+  let textOnShirt = document.querySelector("#customText");
+  textOnShirt.classList.add("hide");
+  document.querySelector("#add_text_button").innerHTML = "Add Text";
+}
 function toggleOption(event) {
   const target = event.currentTarget;
   const feature = target.dataset.feature;
@@ -52,18 +94,34 @@ function toggleOption(event) {
     turnFeatureOff(targetForShort, "long");
   }
   // as above but with texts - so two cant be on at the same time
-  if (feature == "text_1" && features.text_2 == true) {
-    features.text_2 = false;
-    const targetForShort = document.querySelector(
-      ".option[data-feature='text_2']"
-    );
-    turnFeatureOff(targetForShort, "text_2");
-  } else if (feature == "text_2" && features.text_1 == true) {
-    features.text_1 = false;
-    const targetForShort = document.querySelector(
-      ".option[data-feature='text_1']"
-    );
-    turnFeatureOff(targetForShort, "text_1");
+  if (
+    feature == "text_1" &&
+    (features.text_2 == true || features.custom_text == true)
+  ) {
+    if (features.text_2 == true) {
+      features.text_2 = false;
+      const targetForShort = document.querySelector(
+        ".option[data-feature='text_2']"
+      );
+      turnFeatureOff(targetForShort, "text_2");
+    }
+    if (features.custom_text == true) {
+      removeCustomText();
+    }
+  } else if (
+    feature == "text_2" &&
+    (features.text_1 == true || features.custom_text == true)
+  ) {
+    if (features.text_1 == true) {
+      features.text_1 = false;
+      const targetForShort = document.querySelector(
+        ".option[data-feature='text_1']"
+      );
+      turnFeatureOff(targetForShort, "text_1");
+    }
+    if (features.custom_text == true) {
+      removeCustomText();
+    }
   }
 
   if (features[feature] === true) {
@@ -182,7 +240,6 @@ function theClick() {
   document.querySelectorAll("g").forEach((element) => {
     element.style.stroke = "";
   });
-  console.log(paint);
   paint.style.stroke = "blue";
   paint.style.strokeWidth = "10";
   paint.style.fill = "grey";

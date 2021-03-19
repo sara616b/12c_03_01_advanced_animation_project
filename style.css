@@ -48,6 +48,17 @@ p {
   width: auto;
   height: 90%;
 }
+#customText {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 90%;
+  font-size: 1.5rem;
+  margin-top: -20px;
+  pointer-events: none;
+}
 /* {
   position: relative;
   width: 60%;
