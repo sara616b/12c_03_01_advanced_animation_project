@@ -143,22 +143,22 @@ function start() {
 
   //   extras images animation
   gsap.from("#extra_images", {
-    duration: 2,
+    duration: 1,
     iterations: 1,
     ease: "cubic-bezier(.25,.12,.61,1.51)",
     keyframes: [
       {
-        transform: "translate(100vw, 0)",
+        transform: "translate(50vw, 0)",
         opacity: 0,
         offset: 0,
       },
       {
-        transform: "translate(75vw, 0)",
-        opacity: 1,
+        transform: "translate(30vw, 0)",
+        opacity: 0,
         offset: 0.8,
       },
       {
-        transform: "translate(25vw, 0)",
+        transform: "translate(10vw, 0)",
         opacity: 1,
         offset: 0.95,
       },
