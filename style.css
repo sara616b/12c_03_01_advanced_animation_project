@@ -75,11 +75,16 @@ figure {
   margin-top: 40px;
   pointer-events: none;
 }
+#text_container {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
 
 input[type="text"] {
   border: solid rgba(128, 128, 128, 0.301) 1px;
   padding: 2px;
-  width: 60%;
+  width: 40%;
 }
 #add_text_button {
   border: none;
@@ -91,15 +96,16 @@ input[type="text"] {
   text-transform: uppercase;
   color: rgb(78, 78, 78);
 }
+#fonts_container {
+  width: 20%;
+}
+#fonts {
+  border: solid rgba(128, 128, 128, 0.301) 1px;
+  color: gray;
+}
 
 #product-preview .hide {
   opacity: 0;
-}
-
-#fonts {
-  flex-grow: 1;
-  flex-basis: 50px;
-  margin-bottom: 10px;
 }
 
 /* Options */
@@ -183,8 +189,10 @@ input[type="text"] {
 
 input[type="color"] {
   border: none;
-  width: 9%;
+  width: 8%;
+  height: 33px;
   margin-left: 5px;
+  border: #96d2e1 dashed 2px;
 }
 
 /* Animation classes */
@@ -241,13 +249,28 @@ input[type="color"] {
 @media screen and (max-width: 750px) {
   #configurator {
     grid-template-areas:
-      "product"
-      "features"
-      "options";
+      "features product product"
+      "options options options";
     overflow-y: visible;
   }
   body {
     overflow-y: scroll;
+  }
+  #selected {
+    max-width: 200px;
+    height: auto;
+  }
+  #selected ul {
+    flex-direction: column;
+    display: flex;
+  }
+  #product-preview {
+    min-width: 300px;
+  }
+}
+@media screen and (max-width: 450px) {
+  #product-preview {
+    min-width: 200px;
   }
 }
 @media screen and (max-width: 370px) {

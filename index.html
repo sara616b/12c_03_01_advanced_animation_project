@@ -191,23 +191,22 @@
           <img src="/images/feature_text_2.png" alt="Text" />
           <figcaption>Text 2</figcaption>
         </figure>
-        <figure>
+        <figure id="text_container">
           <input
             type="text"
             name="customTextField"
             id="customTextField"
             placeholder="Add custom text..."
           />
+          <div id="fonts_container">
+            <select name="fonts" id="fonts">
+              <option value="sans-serif">Sans-Serif</option>
+              <option value="serif">Serif</option>
+              <option value="monospace">Monospace</option>
+            </select>
+          </div>
           <button id="add_text_button">Add Text</button>
         </figure>
-
-        <div>
-          <select name="fonts" id="fonts">
-            <option value="sans-serif">Sans-Serif</option>
-            <option value="serif">Serif</option>
-            <option value="monospace">Monospace</option>
-          </select>
-        </div>
 
         <div id="colorsection">
           <svg viewbox="0 0 870 100" id="colors">
