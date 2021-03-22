@@ -169,26 +169,27 @@ button:hover {
   font-size: 1.5rem;
 }
 
+#extra_images {
+  grid-row: 2/6;
+  grid-column: 3/4;
+}
+
 #extra_one {
   width: 25%;
-  grid-column: 3/3;
-  grid-row: 2/4;
   margin-top: 3rem;
   margin-left: 3rem;
 }
 
 #extra_two {
   width: 25%;
-  grid-column: 3/3;
-  grid-row: 3/4;
   margin-left: 3rem;
+  margin-right: 11rem;
 }
 
 #extra_three {
   width: 25%;
-  grid-column: 3/3;
-  grid-row: 4/4;
   margin-left: 3rem;
+  margin-right: 11rem;
 }
 
 #try_it {

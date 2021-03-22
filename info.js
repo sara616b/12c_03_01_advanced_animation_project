@@ -18,6 +18,7 @@ function start() {
       toggleActions: "restart none none reset",
     },
   });
+
   gsap.from("#details .fromLeft", {
     xPercent: -10,
     yPercent: 100,
@@ -30,6 +31,7 @@ function start() {
       start: "center 70%",
     },
   });
+
   gsap.from("#colors .fromLeft", {
     xPercent: -10,
     yPercent: 100,
@@ -42,6 +44,7 @@ function start() {
       start: "center 70%",
     },
   });
+
   gsap.from("#extras .fromLeft", {
     xPercent: -10,
     yPercent: 100,
@@ -54,6 +57,7 @@ function start() {
       start: "center 70%",
     },
   });
+
   gsap.from("#edit_text .fromLeft", {
     xPercent: -10,
     yPercent: 100,
@@ -66,6 +70,7 @@ function start() {
       start: "center 70%",
     },
   });
+
   gsap.from("#try_it .fromLeft", {
     duration: 1,
     keyframes: [
@@ -89,6 +94,7 @@ function start() {
       start: "center 70%",
     },
   });
+
   gsap.from("#details .fromRight", {
     opacity: 0,
     yPercent: 100,
@@ -134,4 +140,39 @@ function start() {
       start: "center 70%",
     },
   });
+
+  //   extras images animation
+  gsap.from("#extra_images", {
+    duration: 2,
+    iterations: 1,
+    ease: "cubic-bezier(.25,.12,.61,1.51)",
+    keyframes: [
+      {
+        transform: "translate(100vw, 0)",
+        opacity: 0,
+        offset: 0,
+      },
+      {
+        transform: "translate(75vw, 0)",
+        opacity: 1,
+        offset: 0.8,
+      },
+      {
+        transform: "translate(25vw, 0)",
+        opacity: 1,
+        offset: 0.95,
+      },
+      {
+        transform: "translate(0, 0)",
+        opacity: 1,
+        offset: 1,
+      },
+    ],
+    scrollTrigger: {
+      trigger: "#extra_images",
+      toggleActions: "restart none none reset",
+      start: "center 70%",
+    },
+  });
 }
+
