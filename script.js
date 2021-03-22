@@ -52,6 +52,9 @@ function start() {
     }
   });
 
+  // register font change
+  document.querySelector("#fonts").addEventListener("input", changeFont);
+
   getSvgInfo();
 }
 
@@ -61,9 +64,17 @@ function addCustomText() {
   let textStringToAdd = textField.value;
   console.log(textStringToAdd);
   let textOnShirt = document.querySelector("#customText");
+  changeFont();
   textOnShirt.textContent = textStringToAdd;
   textOnShirt.classList.remove("hide");
   document.querySelector("#add_text_button").innerHTML = "Remove Text";
+}
+
+function changeFont() {
+  if (features.custom_text) {
+    let newFont = document.querySelector("#fonts").value;
+    document.querySelector("#customText").style.fontFamily = newFont;
+  }
 }
 
 function removeCustomText() {
@@ -225,8 +236,6 @@ function getSvgInfo() {
 
 function interActivity() {
   document.querySelectorAll(".interact").forEach((eachG) => {
-    eachG.addEventListener("mouseover", theMouseover);
-    eachG.addEventListener("mouseout", theMouseout);
     eachG.addEventListener("click", theClick);
   });
 
@@ -243,15 +252,6 @@ function theClick() {
   paint.style.stroke = "blue";
   paint.style.strokeWidth = "10";
   paint.style.fill = "grey";
-}
-
-function theMouseover() {
-  // this.style.strokeWidth = "2";
-  // this.style.stroke = "blue";
-}
-
-function theMouseout() {
-  //this.style.stroke = "none";
 }
 
 function colorClick() {

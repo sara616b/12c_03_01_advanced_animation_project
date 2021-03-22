@@ -1,7 +1,9 @@
 * {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  overflow-y: hidden;
 }
 #configurator {
   display: grid;
@@ -9,11 +11,12 @@
     "product product options"
     "features features features";
   gap: 1em;
-  margin: 1em;
+  margin: 4em 1em 1em 1em;
+  height: calc(100vh - 5em);
 }
 
 body {
-  background-color: #c9c9c9;
+  background-color: #ffffff;
 }
 
 p {
@@ -22,22 +25,28 @@ p {
   margin-top: 60px;
 }
 
+h2 {
+  font-size: 1rem;
+  padding-bottom: 10px;
+}
 /* Product */
 
 #product-preview {
   grid-area: product;
   position: relative;
   background-color: #ffffff;
-  height: 80vh;
+  height: 60vh;
   transition: opacity ease-in 0.5s;
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.329) 1px 1px 2px;
+  border: rgba(196, 196, 196, 0.404) solid 0.5px;
 }
 
 #product-preview svg {
   position: absolute;
-  height: 80vh;
+  height: 55vh;
 }
 
 #product-preview [data-feature="text_1"],
@@ -46,29 +55,51 @@ p {
   display: flex;
   justify-content: center;
   width: auto;
-  height: 90%;
+  height: 67%;
+  top: 35px;
 }
+figure {
+  flex-grow: 1;
+  flex-basis: 30px;
+  padding-bottom: 5px;
+}
+
 #customText {
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 150px;
-  height: 90%;
-  font-size: 1.5rem;
-  margin-top: -20px;
+  width: 100px;
+  height: 50%;
+  font-size: 1.2rem;
+  margin-top: 40px;
   pointer-events: none;
 }
-/* {
-  position: relative;
+
+input[type="text"] {
+  border: solid rgba(128, 128, 128, 0.301) 1px;
+  padding: 2px;
   width: 60%;
-  height: auto;
-  margin: 4.5rem 5.5rem;
-  top: -40vw;
-} */
+}
+#add_text_button {
+  border: none;
+  padding: 6px 4px;
+  width: 20%;
+  background-color: #96d2e1;
+  box-shadow: rgba(0, 0, 0, 0.178) 1px 1px 1px;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  color: rgb(78, 78, 78);
+}
 
 #product-preview .hide {
   opacity: 0;
+}
+
+#fonts {
+  flex-grow: 1;
+  flex-basis: 50px;
+  margin-bottom: 10px;
 }
 
 /* Options */
@@ -77,16 +108,22 @@ p {
   grid-area: options;
   padding: 1em;
   background-color: #ffffff;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.329) 1px 1px 2px;
+  border: rgba(196, 196, 196, 0.404) solid 0.5px;
 }
 
 #options .option {
   display: flex;
+  flex-grow: 1;
+  flex-basis: 50px;
   flex-direction: row;
   align-items: center;
   gap: 1em;
   color: #aaa;
-  height: 40px;
-  margin: 1em 0;
+  height: 30px;
   justify-content: end;
 }
 
@@ -101,20 +138,20 @@ p {
 }
 
 #options .option img {
-  height: 60px;
-}
-
-#options .option figcaption {
-  font-size: 20px;
+  height: 30px;
 }
 
 /* Selected */
 
 #selected {
   grid-area: features;
-  position: relative;
   padding: 1rem;
-  background-color: white;
+  background-color: rgb(241, 241, 241);
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  border: rgba(196, 196, 196, 0.404) solid 0.5px;
+  box-shadow: rgba(0, 0, 0, 0.329) 1px 1px 2px;
 }
 
 #selected ul {
@@ -126,25 +163,28 @@ p {
 }
 
 #selected ul li img {
-  width: 5em;
+  height: 3em;
+  z-index: 2;
 }
 
 /* Colors */
 
 #colorsection {
   position: relative;
-  padding: 10px;
+  padding: 10px 0 0 0;
   background-color: #ffffff;
   color: oldlace;
   display: flex;
   flex-direction: row;
-  width: clamp(200px, 50vw 400px);
+  justify-content: stretch;
+  flex-grow: 1;
+  flex-basis: 60px;
 }
+
 input[type="color"] {
   border: none;
   width: 9%;
   margin-left: 5px;
-  height: 25px;
 }
 
 /* Animation classes */
@@ -204,19 +244,23 @@ input[type="color"] {
       "product"
       "features"
       "options";
+    overflow-y: visible;
+  }
+  body {
+    overflow-y: scroll;
   }
 }
 @media screen and (max-width: 370px) {
   #product-preview {
-    height: 60vh;
+    height: 50vh;
   }
   #product-preview svg {
     position: absolute;
-    height: 60vh;
+    height: 40vh;
   }
 
   #product-preview [data-feature="text_1"],
   #product-preview [data-feature="text_2"] {
-    height: 70%;
+    height: 60%;
   }
 }

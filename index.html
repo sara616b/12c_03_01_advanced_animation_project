@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="./style.css" />
 
     <title>Shirt configurator</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
@@ -40,10 +46,6 @@
         </div>
       </nav>
     </header>
-    <p>
-      Welcome to the shirt configurator!<br />
-      Please select the features you want on your shirt.
-    </p>
 
     <div id="configurator">
       <section id="svg"></section>
@@ -163,7 +165,7 @@
       </div>
 
       <div id="options">
-        Available features
+        <h2>Available features</h2>
 
         <figure class="option" data-feature="hoodie">
           <img src="/images/feature_hoodie.png" alt="Hoodie" />
@@ -190,31 +192,39 @@
           <figcaption>Text 2</figcaption>
         </figure>
         <figure>
-          <input type="text" name="customTextField" id="customTextField" />
+          <input
+            type="text"
+            name="customTextField"
+            id="customTextField"
+            placeholder="Add custom text..."
+          />
           <button id="add_text_button">Add Text</button>
         </figure>
 
+        <div>
+          <select name="fonts" id="fonts">
+            <option value="sans-serif">Sans-Serif</option>
+            <option value="serif">Serif</option>
+            <option value="monospace">Monospace</option>
+          </select>
+        </div>
+
         <div id="colorsection">
           <svg viewbox="0 0 870 100" id="colors">
-            <rect
-              class="color_btn"
-              width="100"
-              height="100"
-              fill="whitesmoke"
-            />
+            <rect class="color_btn" width="100" height="100" fill="lightgrey" />
             <rect
               class="color_btn"
               x="110"
               width="100"
               height="100"
-              fill="lightgrey"
+              fill="#A993ED"
             />
             <rect
               class="color_btn"
               x="220"
               width="100"
               height="100"
-              fill="#454545"
+              fill="#5F8BFA"
             />
             <rect
               class="color_btn"
@@ -228,28 +238,28 @@
               x="440"
               width="100"
               height="100"
-              fill="rosybrown"
+              fill="gray"
             />
             <rect
               class="color_btn"
               x="550"
               width="100"
               height="100"
-              fill="burlywood"
+              fill="#A5F0AD"
             />
             <rect
               class="color_btn"
               x="660"
               width="100"
               height="100"
-              fill="wheat"
+              fill="#143659"
             />
             <rect
               class="color_btn"
               x="770"
               width="100"
               height="100"
-              fill="oldlace"
+              fill="#ED9842"
             />
           </svg>
 
@@ -258,7 +268,7 @@
       </div>
 
       <div id="selected">
-        Selected features
+        <h2>Selected features</h2>
 
         <ul>
           <!-- featureElements are added here! -->
