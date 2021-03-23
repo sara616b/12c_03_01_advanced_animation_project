@@ -33,6 +33,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   @media screen and (max-width: 930px) {
     flex-direction: column;
   }
@@ -42,7 +43,6 @@ body {
 
 .button {
   position: relative;
-  z-index: -1;
   color: white;
   text-decoration: none;
   display: inline-block;
@@ -53,14 +53,14 @@ body {
   padding: 10px 20px;
   margin: 40px;
   box-shadow: 0 2px 5px 0 rgba(3, 6, 26, 0.15);
-  transition: 0.5s all ease-in-out;
-  &:hover {
-    cursor: pointer;
-    background: white;
-    color: #1f4141;
-    animation: none;
-    animation-play-state: paused;
-  }
+  transition: 0.1s all ease-in-out;
+}
+
+.button:hover {
+  position: relative;
+  background-color: #11b0b0;
+  color: white;
+  animation-play-state: paused;
 }
 
 .button-wiggle {
@@ -106,15 +106,6 @@ h1 {
 p {
   text-align: center;
   opacity: 0.8;
-  a {
-    color: white;
-    text-decoration: none;
-    border-bottom: 1px solid white;
-    transition: border 0.3s;
-  }
-  a:hover {
-    border-bottom: 1px solid rgba(0, 0, 0, 0);
-  }
 }
 
 /* NAVIGATION */
@@ -131,6 +122,7 @@ nav {
   min-height: 8vh;
   padding-right: 3rem;
   padding-left: 4rem;
+  z-index: 1;
 }
 
 .logo {
@@ -156,7 +148,9 @@ nav {
   letter-spacing: 1.5px;
   font-size: 16px;
 }
-
+a:hover {
+  color: #11b0b0;
+}
 .burger {
   display: none;
   cursor: pointer;
@@ -198,6 +192,7 @@ nav {
 @media screen and (max-width: 700px) {
   .nav-links {
     position: fixed;
+    z-index: 0;
     right: 0px;
     height: 92vh;
     top: 8vh;
