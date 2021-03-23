@@ -15,11 +15,12 @@ nav {
   z-index: 2;
 }
 
-.logo {
+.logo a {
   color: rgb(226, 226, 226);
   text-transform: uppercase;
   letter-spacing: 2.5px;
   font-size: 18px;
+  text-decoration: none;
 }
 
 .nav-links {

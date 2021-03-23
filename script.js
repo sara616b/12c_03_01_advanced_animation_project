@@ -64,7 +64,7 @@ function start() {
   // register font change
   document.querySelector("#fonts").addEventListener("input", changeFont);
 
-  getSvgInfo();
+  interActivity();
 }
 
 function addCustomText() {
@@ -240,11 +240,6 @@ function createFeatureElement(feature) {
 
 function capitalize(text) {
   return text.substring(0, 1).toUpperCase() + text.substring(1).toLowerCase();
-}
-
-// All about color
-function getSvgInfo() {
-  interActivity();
 }
 
 function interActivity() {

@@ -7,12 +7,14 @@
 }
 #configurator {
   display: grid;
+  position: relative;
   grid-template-areas:
     "product product options"
     "features features features";
   gap: 1em;
-  margin: 4em 0 0 0;
-  height: calc(100vh - 5em);
+  margin: 10vh auto 0 auto;
+  height: calc(92vh + 1em);
+  max-width: 1500px;
 }
 
 body {
@@ -34,8 +36,8 @@ h2 {
 #product-preview {
   grid-area: product;
   position: relative;
-  background-color: #ffffff;
-  height: 60vh;
+  background-color: #96d2e133;
+  height: 100%;
   transition: opacity ease-in 0.5s;
   display: flex;
   justify-content: center;
@@ -88,7 +90,7 @@ input[type="text"] {
 }
 #add_text_button {
   border: none;
-  padding: 6px 4px;
+  text-align: center;
   width: 20%;
   background-color: #96d2e1;
   box-shadow: rgba(0, 0, 0, 0.178) 1px 1px 1px;
@@ -96,8 +98,18 @@ input[type="text"] {
   text-transform: uppercase;
   color: rgb(78, 78, 78);
 }
+
+#add_text_button:hover,
+a:hover,
+select:hover,
+#colorsection rect:hover,
+input[type="color"]:hover,
+.interact:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
 #fonts_container {
-  width: 20%;
+  width: 25%;
 }
 #fonts {
   border: solid rgba(128, 128, 128, 0.301) 1px;
@@ -113,8 +125,9 @@ input[type="text"] {
 #options {
   grid-area: options;
   padding: 1em;
+  position: relative;
   background-color: #ffffff;
-  height: 60vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   box-shadow: rgba(0, 0, 0, 0.329) 1px 1px 2px;
@@ -152,8 +165,9 @@ input[type="text"] {
 #selected {
   grid-area: features;
   padding: 1rem;
+  position: relative;
   background-color: rgb(241, 241, 241);
-  height: 20vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   border: rgba(196, 196, 196, 0.404) solid 0.5px;
@@ -247,11 +261,15 @@ input[type="color"] {
 }
 
 @media screen and (max-width: 750px) {
+  * {
+    overflow-y: scroll;
+  }
   #configurator {
     grid-template-areas:
       "features product product"
       "options options options";
     overflow-y: visible;
+    height: auto;
   }
   body {
     overflow-y: scroll;
@@ -266,6 +284,7 @@ input[type="color"] {
   }
   #product-preview {
     min-width: 300px;
+    min-height: 60vh;
   }
 }
 @media screen and (max-width: 450px) {
