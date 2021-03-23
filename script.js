@@ -50,6 +50,15 @@ function start() {
       }
       addCustomText();
     }
+
+    // when the custom text is on the shirt - change as you write in the text field
+    document
+      .querySelector("input[type='text'")
+      .addEventListener("input", () => {
+        if (features.custom_text == true) {
+          updateCustomText();
+        }
+      });
   });
 
   // register font change
@@ -60,14 +69,18 @@ function start() {
 
 function addCustomText() {
   features.custom_text = true;
+  updateCustomText();
+
+  document.querySelector("#add_text_button").innerHTML = "Remove Text";
+}
+
+function updateCustomText() {
   let textField = document.querySelector("input[type='text'");
   let textStringToAdd = textField.value;
-  console.log(textStringToAdd);
   let textOnShirt = document.querySelector("#customText");
   changeFont();
   textOnShirt.textContent = textStringToAdd;
   textOnShirt.classList.remove("hide");
-  document.querySelector("#add_text_button").innerHTML = "Remove Text";
 }
 
 function changeFont() {
