@@ -141,7 +141,7 @@ function start() {
     },
   });
 
-  //   extras images animation
+  // extras images animation
   gsap.from("#extra_images", {
     duration: 1,
     iterations: 1,
@@ -174,5 +174,6 @@ function start() {
       start: "center 70%",
     },
   });
+
 }
 

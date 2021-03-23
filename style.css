@@ -115,19 +115,6 @@ main a {
   margin-left: 16rem;
 }
 
-/* .button-container {
-  margin: 60px auto 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-
-  @media screen and (max-width: 930px) {
-    flex-direction: column;
-  }
-} */
-
 main button {
   width: 80%;
   height: 80%;
@@ -265,17 +252,64 @@ button:hover {
 
 @media screen and (max-width: 930px) {
   main a {
-    margin-left: 4rem;
+    margin-left: 3rem;
+    cursor: pointer;
   }
 
   main button {
     width: 80%;
     height: 50%;
+    cursor: pointer;
   }
 
   #try_it p {
     grid-column: 2/3;
     grid-row: 2/6;
     font-size: clamp(1rem, 18vw, 8rem);
+  }
+
+  #text_example {
+    grid-column: 2/3;
+    grid-row: 3/5;
+  }
+
+  section p {
+    font-size: 3rem;
+    padding: 0;
+    padding-left: 10vw;
+  }
+
+  #extra_images {
+    transform: translate(50vw, 0);
+    grid-row: 3/6;
+    grid-column: 1/4;
+  }
+
+  #extra_one {
+    width: 20%;
+    margin-top: 0;
+    margin-left: 7rem;
+  }
+
+  #extra_two {
+    width: 20%;
+    margin-left: 7rem;
+    margin-right: 11rem;
+  }
+
+  #extra_three {
+    width: 20%;
+    margin-left: 7rem;
+    margin-right: 11rem;
+  }
+
+  #color_dots {
+    grid-row: 3/6;
+    grid-column: 3/4;
+  }
+
+  .color_dot {
+    height: clamp(50px, 10%, 50px);
+    width: clamp(50px, 10%, 50px);
   }
 }
