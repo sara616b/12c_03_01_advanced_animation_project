@@ -318,12 +318,12 @@ input[type="color"] {
     width: 100%;
   }
 
-  @-moz-document url-prefix() {
+  /* @-moz-document url-prefix() {
     #product-preview svg {
       margin-top: -10%;
       height: auto;
     }
-  }
+  } */
 
   #selected ul li img {
     height: 100px;
