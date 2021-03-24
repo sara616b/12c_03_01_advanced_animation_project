@@ -12,6 +12,7 @@ nav {
   min-height: 8vh;
   padding-right: 3rem;
   padding-left: 4rem;
+  z-index: 1;
 }
 
 .logo {
