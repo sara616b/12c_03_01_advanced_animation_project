@@ -259,7 +259,7 @@ button:hover {
   main button {
     width: 80%;
     height: 50%;
-    cursor: pointer;
+    background-color: var(--blue);
   }
 
   #try_it p {
