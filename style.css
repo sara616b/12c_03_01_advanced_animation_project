@@ -56,16 +56,6 @@ section:nth-of-type(even) {
   animation-timing-function: ease-in;
 }
 
-/* Experiment with an overlay that changes color of t-shirt (doesn't work (yet)) */
-/* #overlay {
-        width: 100vw;
-        height: 60vh;
-        z-index: 1;
-        position: fixed;
-        top: 20vh;
-        background-color: rgba(255, 255, 0, 0.384);
-      } */
-
 @keyframes shirt_in_kf {
   0% {
     opacity: 0;
@@ -104,7 +94,7 @@ section p + p {
   grid-column: 2/4;
   grid-row: 3/4;
   padding-right: 10vw;
-  text-align: end;
+  text-align: start;
 }
 
 main a {
@@ -210,7 +200,6 @@ button:hover {
 }
 
 #extra_images {
-  transform: translate(50vw, 0);
   grid-row: 2/6;
   grid-column: 3/4;
 }
@@ -280,27 +269,26 @@ button:hover {
   }
 
   #extra_images {
-    transform: translate(50vw, 0);
-    grid-row: 3/6;
+    grid-row: 5/6;
     grid-column: 1/4;
   }
 
   #extra_one {
     width: 20%;
     margin-top: 0;
-    margin-left: 7rem;
+    margin-left: 5rem;
   }
 
   #extra_two {
     width: 20%;
-    margin-left: 7rem;
-    margin-right: 11rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   #extra_three {
     width: 20%;
-    margin-left: 7rem;
-    margin-right: 11rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   #color_dots {
