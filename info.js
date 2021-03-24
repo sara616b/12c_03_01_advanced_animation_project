@@ -107,7 +107,7 @@ function start() {
     },
   });
 
-  //   color dots animation
+/*   //   color dots animation
   gsap.from("#color_dots", {
     duration: 2,
     iterations: 1,
@@ -139,7 +139,7 @@ function start() {
       toggleActions: "restart none none reset",
       start: "center 70%",
     },
-  });
+  }); */
 
   // extras images animation
   gsap.from("#extra_images", {
