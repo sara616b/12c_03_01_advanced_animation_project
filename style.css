@@ -167,7 +167,7 @@ button:hover {
   margin: 20px;
   transform-origin: top;
   z-index: 2;
-  /* transform: rotate(-90deg); */
+  transform: rotate(-90deg);
   opacity: 0;
 }
 
@@ -200,7 +200,6 @@ button:hover {
 }
 
 #extra_images {
-  opacity: 0;
   grid-row: 2/6;
   grid-column: 3/4;
 }
@@ -270,27 +269,26 @@ button:hover {
   }
 
   #extra_images {
-    opacity: 0;
-    grid-row: 3/6;
+    grid-row: 5/6;
     grid-column: 1/4;
   }
 
   #extra_one {
     width: 20%;
     margin-top: 0;
-    margin-left: 7rem;
+    margin-left: 5rem;
   }
 
   #extra_two {
     width: 20%;
-    margin-left: 7rem;
-    margin-right: 11rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   #extra_three {
     width: 20%;
-    margin-left: 7rem;
-    margin-right: 11rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   #color_dots {
