@@ -242,9 +242,6 @@ button:hover {
   opacity: 0;
 }
 
-.nav-links {
-  /* right: auto; */
-}
 @media screen and (max-width: 930px) {
   nav {
     width: 100vw;
