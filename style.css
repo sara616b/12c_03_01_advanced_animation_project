@@ -121,6 +121,7 @@ main button {
   border-radius: 1000px;
   padding: 10px 20px;
   transition: 0.5s all ease-in-out;
+  z-index: 5;
 }
 
 button:hover {
@@ -241,6 +242,9 @@ button:hover {
   opacity: 0;
 }
 
+.nav-links {
+  /* right: auto; */
+}
 @media screen and (max-width: 930px) {
   nav {
     width: 100vw;
