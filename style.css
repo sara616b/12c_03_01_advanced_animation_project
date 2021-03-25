@@ -52,7 +52,7 @@ section:nth-of-type(odd) {
   top: 15vh;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url("images/feature_half.png");
+  background-image: url("T-shirt.png");
   background-position: center;
   animation-name: shirt_in_kf;
   animation-duration: 2s;
