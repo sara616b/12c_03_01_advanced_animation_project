@@ -18,6 +18,8 @@ window.addEventListener("DOMContentLoaded", start);
 function start() {
   console.log("start");
 
+  getColorSVG();
+
   // register toggle-clicks
   document
     .querySelectorAll(".option")
@@ -65,6 +67,12 @@ function start() {
   document.querySelector("#fonts").addEventListener("input", changeFont);
 
   interActivity();
+}
+
+async function getColorSVG() {
+  let response = await fetch("colors.svg");
+  let mySVGData = await response.text();
+  document.querySelector("#forColorsSVG").innerHTML = mySVGData;
 }
 
 function addCustomText() {
