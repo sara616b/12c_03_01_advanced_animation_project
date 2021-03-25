@@ -15,10 +15,8 @@ let paint;
 
 window.addEventListener("DOMContentLoaded", start);
 
-function start() {
+async function start() {
   console.log("start");
-
-  getColorSVG();
 
   // register toggle-clicks
   document
@@ -66,14 +64,15 @@ function start() {
   // register font change
   document.querySelector("#fonts").addEventListener("input", changeFont);
 
-  interActivity();
-}
+  // getColorSVG();
 
-async function getColorSVG() {
   let response = await fetch("colors.svg");
   let mySVGData = await response.text();
   document.querySelector("#forColorsSVG").innerHTML = mySVGData;
+  interActivity();
 }
+
+async function getColorSVG() {}
 
 function addCustomText() {
   features.custom_text = true;
@@ -271,6 +270,7 @@ function theClick() {
 }
 
 function colorClick() {
+  console.log("click color");
   if (paint != undefined) {
     paint.style.fill = this.getAttribute("fill");
     paint.style.stroke = "none";
