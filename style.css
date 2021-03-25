@@ -22,7 +22,8 @@ body {
 main {
   width: 100vw;
   margin: auto;
-  background-color: var(--light-gray);
+  background: white;
+  color: black;
   display: flex;
   flex-direction: column;
 }
@@ -37,25 +38,28 @@ section {
   scroll-snap-align: start;
 }
 
-section:nth-of-type(even) {
-  background-color: var(--white);
+section:nth-of-type(odd) {
+  background: linear-gradient(46deg, #bbced3, #1476a0);
+  color: white;
+  text-shadow: var(--shadowColor) 2px 2px 8px;
 }
 
 #the_shirt {
   width: 100vw;
-  height: 60vh;
+  height: 70vh;
   z-index: 1;
   position: fixed;
-  top: 20vh;
+  top: 15vh;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url("shirt_pro.png");
+  background-image: url("images/feature_half.png");
   background-position: center;
   animation-name: shirt_in_kf;
   animation-duration: 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in;
+  color: white;
 }
 
 @keyframes shirt_in_kf {
@@ -82,7 +86,6 @@ section p {
   grid-row: 2/3;
   width: 100%;
   text-align: left;
-  color: black;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   font-size: 4rem;
