@@ -295,6 +295,7 @@ button:hover {
   #extra_images {
     grid-row: 5/6;
     grid-column: 1/4;
+    flex-direction: row;
   }
 
   #extra_one {
