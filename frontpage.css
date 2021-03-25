@@ -97,7 +97,7 @@ p {
 
 .button:hover {
   position: relative;
-  background-color: #11b0b0;
+  background-color: #96d2e1;
   color: white;
   animation-play-state: paused;
 }
