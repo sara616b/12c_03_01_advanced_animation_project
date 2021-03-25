@@ -4,9 +4,9 @@ const ctx = canvas.getContext("2d");
 
 let particleArray = [];
 let factor = 10;
-let heightOffset = 50;
-let fontFactor = 60;
-let radius = 150;
+let heightOffset;
+let fontFactor = 55;
+let radius = 130;
 
 // HANDLE MOUSE
 const mouse = {
@@ -24,6 +24,8 @@ function initText() {
   canvas.style.width = window.innerWidth;
   canvas.height = window.innerHeight;
   canvas.style.height = window.innerHeight;
+
+  heightOffset = canvas.height / 20;
 
   ctx.fillStyle = "white";
   ctx.textAlign = "center";
@@ -87,7 +89,7 @@ function init() {
   particleArray = [];
   for (let y = 0, y2 = textCoordinates.height; y < y2; y++) {
     for (let x = 0, x2 = textCoordinates.width; x < x2; x++) {
-      if (textCoordinates.data[y * 4 * textCoordinates.width + x * 4 + 3] > 40) {
+      if (textCoordinates.data[y * 4 * textCoordinates.width + x * 4 + 3] > 30) {
         let positionX = x;
         let positionY = y;
         particleArray.push(new Particle(positionX * factor, positionY * factor));
