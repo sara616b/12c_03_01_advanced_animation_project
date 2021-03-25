@@ -8,7 +8,7 @@
 
 body {
   min-height: 100vh;
-  background: linear-gradient(46deg, #bbced3, #1476a0);
+  background: linear-gradient(360deg, #bbced3, #1476a0);
   color: white;
   overflow: hidden;
   font-family: "Lato", sans-serif;
@@ -39,15 +39,18 @@ canvas {
 
 /* MEDIA QUERIES*/
 
-@media screen and (min-width: 80em) {
+@media screen and (min-width: 1350px) {
+  .container {
+    padding-top: 30vh;
+  }
   canvas {
     display: block;
   }
 }
 
-@media screen and (min-width: 80em) {
-  .container {
-    padding-top: 20rem;
+@media screen and (max-width: 1050px) {
+  .button {
+    background-color: #96d2e1;
   }
 }
 
