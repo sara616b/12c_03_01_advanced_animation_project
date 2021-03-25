@@ -215,6 +215,11 @@ input[type="color"]:hover,
   flex-basis: 60px;
 }
 
+#colorsection svg {
+  width: 100%;
+  height: 100%;
+}
+
 input[type="color"] {
   border: none;
   width: 8%;
@@ -341,10 +346,10 @@ input[type="color"] {
   #selected {
     width: 40vw;
   }
-
+  /* 
   #colorsection svg {
     width: 80%;
-  }
+  } */
   #text_container {
     flex-direction: column;
     flex-grow: 3;
