@@ -236,7 +236,7 @@ function createFeatureElement(feature) {
   li.dataset.feature = feature;
 
   const img = document.createElement("img");
-  img.src = `/images/feature_${feature}.png`;
+  img.src = `images/feature_${feature}.png`;
   img.alt = capitalize(feature);
 
   //Add the li element
