@@ -240,6 +240,10 @@ button:hover {
 }
 
 @media screen and (max-width: 930px) {
+  nav {
+    width: 100vw;
+  }
+
   main a {
     margin-left: 3rem;
     cursor: pointer;
