@@ -10,8 +10,10 @@
   --black: black;
   --shadowColor: rgba(0, 0, 0, 0.137);
 }
-
-html {
+nav {
+  width: 100vw;
+}
+body {
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
