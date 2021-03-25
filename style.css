@@ -10,8 +10,10 @@
   --black: black;
   --shadowColor: rgba(0, 0, 0, 0.137);
 }
-
-html {
+nav {
+  width: 100vw;
+}
+body {
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
@@ -240,10 +242,6 @@ button:hover {
 }
 
 @media screen and (max-width: 930px) {
-  nav {
-    width: 100vw;
-  }
-
   main a {
     margin-left: 3rem;
     cursor: pointer;
